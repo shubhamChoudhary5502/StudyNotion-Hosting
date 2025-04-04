@@ -15,6 +15,8 @@ const cors = require("cors");
 const passport = require("passport");
 const { loginWithGoogle } = require("./controllers/Auth");
 
+const aiAssessmentRoutes = require("./routes/aiAssessmentRoutes");
+
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const jwt = require("jsonwebtoken");
 const session = require("express-session");
@@ -48,6 +50,8 @@ app.use(
     tempFileDir: "/tmp",
   })
 );
+//ai assessment routes
+app.use("/api/ai-assessment", aiAssessmentRoutes);
 
 // Passport starts here
 app.use(passport.initialize());

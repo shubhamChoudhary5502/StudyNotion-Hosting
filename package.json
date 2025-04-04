@@ -11,6 +11,8 @@
     "axios": "^1.6.0",
     "chart.js": "^4.4.1",
     "concurrently": "^8.2.2",
+    "dotenv": "^16.4.7",
+    "openai": "^4.90.0",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
     "react-copy-to-clipboard": "^5.1.0",

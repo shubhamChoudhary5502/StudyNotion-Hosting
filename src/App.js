@@ -28,6 +28,7 @@ import CourseDetails from "./pages/CourseDetails";
 import ViewCourse from "./pages/ViewCourse";
 import VideoDetails from "./components/core/viewCourse/VideoDetails";
 import InstructorDashboard from "./components/core/Dashboard/InstructorDashboard/InstructorDashboard";
+import AIQuiz from "./components/core/AiAssessment/AIQuiz";  
 
 function App() {
   const { user } = useSelector((state) => state.profile);
@@ -123,6 +124,7 @@ function App() {
                 path="dashboard/enrolled-courses"
                 element={<EnrolledCourses />}
               />
+              <Route path="dashboard/ai-quiz" element={<AIQuiz />} />
             </>
           )}
           {user?.accountType === ACCOUNT_TYPE.INSTRUCTOR && (
