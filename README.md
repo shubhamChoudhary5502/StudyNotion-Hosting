@@ -139,19 +139,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ---
 
-## You're Part of This! 🤝
-
-Love to code? Want to make StudyNotion even cooler?  
-Your contributions are welcome! Just fork, clone, create a feature branch, and make a pull request.
-
----
-
-## Live Project Link 🌐
-
-[https://study-notion-ed-tech-five.vercel.app/](https://study-notion-ed-tech-five.vercel.app/)
-
-Your contributions are welcome! Just fork, clone, create a feature branch, and make a pull request.
-
-Live Project Link 🌐
-https://study-notion-ed-tech-five.vercel.app/
-
