@@ -6,6 +6,35 @@ const SubSection = require("../models/SubSection");
 const { uploadImageToCloudinary } = require("../utils/imageUploader");
 const convertSecondsToDuration = require("../utils/secToDuration");
 const CourseProgress = require("../models/CourseProgress");
+const fs = require("fs");
+const axios = require("axios");
+
+exports.getRecommendations = async (req, res) => {
+  const { courseId } = req.body;
+  try {
+    const response = await axios.post("http://localhost:5001/recommend", {
+      course_id: courseId,
+    });
+    res.status(200).json({
+      success: true,
+      recommendations: response.data,
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ success: false, message: "Error fetching recommendations" });
+  }
+};
+
+
+
+async function exportCoursesToJSON() {
+  const courses = await Course.find({}, "title description tags category");
+  fs.writeFileSync("courses.json", JSON.stringify(courses, null, 2));
+  console.log("Course data exported!");
+}
+
+exportCoursesToJSON();
+
 
 // create course handler
 exports.createCourse = async (req, res) => {
