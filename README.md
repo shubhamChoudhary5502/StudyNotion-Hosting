@@ -1,102 +1,139 @@
-# StudyNotion - Your Learning Companion 📚
-
+StudyNotion - Your Learning Companion 📚
 Hey there! Welcome to StudyNotion, a cool project I've been working on to make learning fun and accessible. This README is like our tour guide, so let's dive in and see what's under the hood!
 
-## Quick Intro 🌟
+🚀 New Feature: ML-Powered Course Recommendation System 🤖
+We've supercharged StudyNotion with Machine Learning capabilities!
+Now, learners get personalized course recommendations based on their interests and activities. This system intelligently analyzes course metadata, categories, and user preferences to help learners discover the most relevant and useful courses.
 
-StudyNotion is my way of making learning interactive and exciting. It's not just for students but also for awesome instructors to share their knowledge with learners around the world. With features like flawless responsiveness across all screen sizes, a meticulously documented backend, progress tracking for enrolled courses, and secure payments through Razorpay, StudyNotion is here to make your learning experience better than ever!
+🔍 How it Works:
 
-## What's Inside? 🧐
+Uses Natural Language Processing (NLP) to understand course topics.
 
+Computes content similarity using vector-based models (TF-IDF + cosine similarity).
+
+Dynamically recommends top N relevant courses when viewing any course page.
+
+📦 Tech Used:
+
+Python (scikit-learn, pandas)
+
+Flask API for recommendation backend
+
+Integrated seamlessly with React frontend via REST API calls
+
+Deployed on backend and called via <RecommendedCourses courseId={courseId} /> in the course detail view.
+
+Quick Intro 🌟
+StudyNotion is my way of making learning interactive and exciting. It's not just for students but also for awesome instructors to share their knowledge with learners around the world. With features like flawless responsiveness across all screen sizes, a meticulously documented backend, progress tracking, secure payments, and now ML-driven recommendations — StudyNotion is here to elevate your learning experience!
+
+What's Inside? 🧐
 This README will walk you through everything - from how the system works to setting it up on your machine. So, let's get started!
 
-## Front-end Magic ✨
+Front-end Magic ✨
+Built with ReactJS, TailwindCSS, and Redux for state management. The UI is sleek, responsive, and optimized for all devices.
 
-The front-end is what you see - the cool buttons, pages, and all that jazz. It's built with ReactJS, a tech that makes things look awesome and work smoothly. It talks to the back-end using something called RESTful API calls, which is just a way of saying they chat and share info.
+Pages You'll See 📚
+For Students:
 
-### Pages You'll See 📚
+Homepage
 
-**For Students:**
-- **Homepage:** The starting point, with links to courses and your details.
-- **Catalog:** Check out different course categories.
-- **Course List:** A list of all courses with details and ratings.
-- **Cart:** Keep track of the courses you're interested in.
-- **Cart Checkout:** Buy your selected courses hassle-free.
-- **Course Content:** Dive into the course materials.
-- **User Details:** Know everything about your account.
-- **User Edit Details:** Make your account truly yours.
+Catalog
 
-**For Instructors:**
-- **Dashboard:** Get a quick overview of your courses and earnings.
-- **Course Management Pages:** Create, update, and delete courses - it's your course kingdom!
-- **View and Edit Profile Details:** Personalize your instructor account.
+Course List
 
-### Tech Behind the Scenes 🛠️
+Course Details (with ML Recommendations!)
 
-For the cool stuff on the front-end, I used ReactJS, CSS for styling, Tailwind to make things pretty, and Redux to keep things organized.
+Cart & Checkout
 
-## Back-end Magic 🖥️
+Course Content Viewer
 
-Now, let's talk about the back-end - the brain behind everything. It's like the engine room, making sure everything runs smoothly. I used NodeJS and ExpressJS for this part, and they work together to handle user accounts, courses, payments, and more.
+Profile & Settings
 
-### What It Can Do 🚀
+For Instructors:
 
-- **User Authentication and Authorization:** Sign up, log in, and keep things secure.
-- **Course Management:** Instructors can create, update, and delete courses, while students can view and rate them.
-- **Payment Integration:** Buy courses securely with Razorpay.
-- **Cloud-based Media Management:** All our images, videos, and documents are stored and managed by Cloudinary.
-- **Markdown Formatting:** Courses are stored in Markdown format for a cool display.
-- **Login with Google:** Users can now log in seamlessly using their Google accounts.
+Dashboard
 
-### Tools in Action 🛠️
+Create / Edit Courses
 
-For this part, I used Node.js, Express.js, MongoDB to store all the info, JWT for security, Bcrypt to keep passwords safe, Mongoose to help with the database, Cookie parser for cookies (not the tasty kind!), Nodemailer to send emails, and Razorpay for payments.
+Profile Management
 
-## Database World 📊
+Back-end Power 💪
+Node.js + Express.js-based server managing:
 
-Our info hangs out in MongoDB, a super-flexible database. It keeps everything organized, from course content to user data.
+Authentication (JWT + Google OAuth)
 
-## API Chat 🗣️
+Course & user data (MongoDB)
 
-Our APIs (Application Programming Interfaces - just a way for the front and back to talk) follow a style called REST. It's like a language they both understand, making sure they share info smoothly. Check the [API Documentation](https://documenter.getpostman.com/view/30301498/2s9YkrcfpL#ed95e6e0-58cb-4e0b-a3dd-d00f6dcc0110) for the full details.
+Payments (Razorpay)
 
-## Let's Get Started! 🚀
+Media (Cloudinary)
 
-Want to play with StudyNotion on your machine? Easy peasy:
+Emails (Nodemailer)
 
-1. **Clone the repository:** `git clone https://github.com/username/repo.git`
-2. **Go to the project directory:** `cd StudyNotion`
-3. **Install what's needed:** `npm install`
+Recommendations (integrated with ML service)
 
-### Getting Things Ready ⚙️
+🧠 ML Recommendation Engine
+Separate Python Flask API deployed in the backend
 
-1. Set up a MongoDB database and get the connection URL.
-2. Create a `.env` file in the main folder with these inside:
+Calculates course similarities based on title, tags, and descriptions
 
+Exposes /recommend/:courseId route
 
+Called from React via Axios in CourseDetails.jsx
 
-## Let's Roll! 🎉
+Example usage:
 
-1. **Start the server:** `npm start`
-2. **Go to the client folder:** `cd client`
-3. **Start the React server:** `npm start`
-4. **Open your browser:** Go to http://localhost:3000.
+jsx
+Copy
+Edit
+<RecommendedCourses courseId={courseId} />
+Database World 📊
+MongoDB is used to persist user info, course content, orders, reviews, and more.
 
-## You're Part of This! 🤝
+API Chat 🗣️
+StudyNotion uses RESTful APIs to connect the front and back ends.
+📑 Check full API docs here
 
-Love to code? Want to make StudyNotion even cooler? Your contributions are welcome! 
+Setup Guide 🔧
+1. Clone & Install
+bash
+Copy
+Edit
+git clone https://github.com/username/repo.git
+cd StudyNotion
+npm install
+2. Environment Variables
+Create a .env file in the root with:
 
-So, let's explore the world of StudyNotion together - where learning meets fun. Happy coding! 🚀
+env
+Copy
+Edit
+PORT=4000
+MONGO_URI=your_mongodb_connection
+JWT_SECRET=your_jwt_secret
+CLOUDINARY_NAME=your_cloudinary_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_SECRET=your_api_secret
+RAZORPAY_KEY_ID=your_razorpay_key
+RAZORPAY_SECRET=your_razorpay_secret
+GOOGLE_CLIENT_ID=your_google_client_id
+3. Start the Project
+bash
+Copy
+Edit
+# Start backend
+npm start
 
+# Open a new terminal
+cd client
+npm install
+npm start
+Open http://localhost:3000 to view it in your browser.
 
-## Live Project Link 🌐
+You're Part of This! 🤝
+Love to code? Want to make StudyNotion even cooler?
+Your contributions are welcome! Just fork, clone, create a feature branch, and make a pull request.
 
-[Live project link here!](https://study-notion-ed-tech-five.vercel.app/)
-
-## API Documentation 📘
-
-[API documentation link here!](https://documenter.getpostman.com/view/30301498/2s9YkrcfpL#ed95e6e0-58cb-4e0b-a3dd-d00f6dcc0110)
-
-## Screenshots 📸
-![Web capture_26-12-2023_02412_study-notion-ed-tech-five vercel app](https://github.com/shubhhhGT/StudyNotion_EdTech/assets/140509975/6cc9cb8b-e126-4ef3-9f83-bcafc4b14471)
+Live Project Link 🌐
+https://study-notion-ed-tech-five.vercel.app/
 
